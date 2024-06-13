@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>Items Return History</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Returned By</th>
+                    <th scope="col">Return Date</th>
+                    <th scope="col">Return Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.item}}</td>
+                    <td>{{item.returned_by}}</td>
+                    <td>{{item.returned_date}}</td>
+                    <td>{{item.returned_amount}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

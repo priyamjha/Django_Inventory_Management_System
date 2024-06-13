@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>Items Restock History</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Restocked Date</th>
+                    <th scope="col">Initial Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.item}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.timestamp}}</td>
+                    <td>{{item.initial_value}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

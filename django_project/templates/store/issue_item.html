@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<h5>Issue an Item</h5>
+<form class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
+    {% csrf_token %}
+    
+    <div class="form-floating mb-3">
+        {% render_field form.item class="form-control" %}
+        <label for="floatingInput">Item Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        {% render_field form.issued_amount class="form-control" %}
+        <label for="floatingInput">Issued Amount</label>
+    </div>
+    <div class="form-floating mb-3">
+        {% render_field form.issued_to class="form-control" %}
+        <label for="floatingInput">Issued To</label>
+    </div>
+    <div class="form-floating mb-3">
+        {% render_field form.department class="form-control" %}
+        <label for="floatingInput">Department</label>
+    </div>
+    <div class="form-floating mb-3">
+        {% render_field form.return_date type="date" class="form-control" %}
+        <label for="floatingInput">Return Date</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4>Items Issue History</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Issued Amount</th>
+                    <th scope="col">Issued By</th>
+                    <th scope="col">Issued To</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Date Issued</th>
+                    <th scope="col">Return Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.item}}</td>
+                    <td>{{item.issued_amount}}</td>
+                    <td>{{item.issued_by}}</td>
+                    <td>{{item.issued_to}}</td>
+                    <td>{{item.department}}</td>
+                    <td>{{item.issued_date}}</td>
+                    <td>{{item.return_date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
